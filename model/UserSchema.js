@@ -17,7 +17,7 @@ const UserSchema = new mongoose.Schema({
   phone: {
     type: Number,
     required: true,
-    enum: ["India", "USA", "UK", "Japan"],
+    // enum: ["India", "USA", "UK", "Japan"],
   },
   role: {
     type: String,

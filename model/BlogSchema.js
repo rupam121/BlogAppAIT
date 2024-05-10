@@ -18,6 +18,7 @@ const BlogSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,
+    // required: true,
   },
   user: {
     id: {
