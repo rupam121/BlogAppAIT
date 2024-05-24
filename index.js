@@ -1,10 +1,12 @@
 import express from "express";
+import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import mongoose from "mongoose";
+
 import dotenv from "dotenv";
+
 import blogRouter from "./Routes/blog.js";
-// import userRouter from "./Routes/user.js";
+import authRouter from "./Routes/auth.js";
 
 dotenv.config();
 
@@ -48,7 +50,7 @@ app.use(express.json());
 app.use(cors(corsOption));
 app.use(cookieParser());
 app.use("/api/v1/blog/",blogRouter);
-
+app.use("/api/v1/auth/",authRouter);
 
 connectDB().then(() => {
   app.listen(port, () => {

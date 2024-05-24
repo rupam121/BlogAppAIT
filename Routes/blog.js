@@ -1,7 +1,7 @@
 // createBlog, editBlog, DeleteNlog, GetAllBlog
 
 import express from "express";
-import { createBlog, getAllBlog ,getSingleBlog } from "../controller/blogCoontroler.js";
+import { createBlog, getAllBlog ,getSingleBlog } from "../controller/blogController.js";
 
 const router = express.Router();
 

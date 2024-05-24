@@ -1,5 +1,5 @@
 import Blog from "../model/BlogSchema.js";
-// import User from "../model/UserSchema.js";
+
 
 export const createBlog = async (req, res, next) => {
   const { title, content, topic } = req.body;
@@ -37,4 +37,27 @@ export const getAllBlog = async (req, res, next) => {
   }
 };
 
-export const getSingleBlog = async (req, res, next) => {};
+export const getSingleBlog = async (req, res, next) => {
+
+  const blogId = req.params.id;
+
+  try {
+    const blog = await Blog.findById(blogId);
+    if(!blog){
+      res.status(404).json({
+        success: false,
+        message: "Blog not found in ID",
+      });
+    }
+    res.status(200).json({
+      success: true,
+      message: "Blog  Successfully found.",
+      data: blog,
+    });
+  } catch (error) {
+    res.status(404).json({
+      success: false,
+      message: "Blog not found",
+    });
+  }
+};

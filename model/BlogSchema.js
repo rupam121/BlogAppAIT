@@ -5,15 +5,15 @@ import mongoose from "mongoose";
 const BlogSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    // required: true,
   },
   content: {
     type: String,
-    required: true,
+    // required: true,
   },
   topic: {
     type: String,
-    required: true,
+    // required: true,
   },
   createdAt: {
     type: Date,
@@ -24,11 +24,11 @@ const BlogSchema = new mongoose.Schema({
     id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true,
+      // required: true,
     },
     name: {
       type: String,
-      required: true,
+      // required: true,
     },
   },
 });

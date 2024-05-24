@@ -3,26 +3,27 @@ import mongoose from "mongoose";
 const UserSchema = new mongoose.Schema({
   email: {
     type: String,
-    required: true,
+    // required: true,
     unique: true,
   },
   password: {
     type: String,
-    required: true,
+    // required: true,
   },
   name: {
-    required: true,
+    // required: true,
     rtpe: String,
   },
   phone: {
     type: Number,
-    required: true,
+    // required: true,
     // enum: ["India", "USA", "UK", "Japan"],
   },
   role: {
     type: String,
     enum: ["user", "admin", "staff", "SuperAdmin"],
+    default: "user",
   },
 });
 
-export default mongoose.model("User",UserSchema);
+export default mongoose.model("User", UserSchema);
